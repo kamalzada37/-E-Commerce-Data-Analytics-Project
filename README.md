@@ -126,7 +126,7 @@ This will:
 
 * Save results into outputs/ as CSV files.
 
-# 3D Model Processing with Open3D
+# Assignment5_3D Model Processing with Open3D
 
 Overview
 
@@ -237,4 +237,5 @@ Final Note
 All 7 steps are implemented in sequence.
 Missing any step results in 0 points according to the assignment rules.
 This project demonstrates a full 3D processing pipeline: from raw geometry to reconstructed, voxelized, and color-analyzed visualization.
+
 
