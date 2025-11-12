@@ -126,3 +126,115 @@ This will:
 
 * Save results into outputs/ as CSV files.
 
+# 3D Model Processing with Open3D
+
+Overview
+
+This project demonstrates 3D geometry processing using the Open3D Python library.
+The goal is to load a 3D model, analyze its structure, and apply multiple transformations — from mesh to point cloud, voxel grid, and clipped surfaces — all visualized step by step.
+
+Each stage opens a new visualization window and prints information about vertices, triangles, and color attributes.
+
+
+Project Steps
+1️⃣ Loading and Visualization
+
+Loaded the file: my_model_mustafa.ply
+
+Displayed the original mesh using Open3D’s 3D viewer.
+
+Printed the number of vertices, triangles, and checked for color/normals.
+
+💬 Purpose: View and understand the raw geometry before processing.
+
+
+2️⃣ Conversion to Point Cloud
+
+Converted the mesh to a point cloud (5000 uniform points).
+
+Printed the number of points and checked for color.
+
+💬 Purpose: Create a simplified version suitable for surface reconstruction and voxelization.
+
+3️⃣ Surface Reconstruction
+
+Used Poisson reconstruction to generate a smooth surface from the point cloud.
+
+Cropped unwanted parts using a bounding box.
+
+Printed vertex and triangle counts.
+
+💬 Purpose: Reconstruct a clean and continuous mesh from scattered point data.
+
+4️⃣ Voxelization
+
+Created a voxel grid (voxel_size = 0.05).
+
+Counted the number of voxels.
+
+Displayed the voxel model.
+
+💬 Purpose: Represent the model as small cubes — useful for volumetric analysis.
+
+5️⃣ Adding a Plane
+
+Created a flat reference plane under the model using create_box().
+
+Painted it gray and displayed together with the object.
+
+💬 Purpose: Simulate a floor or background surface for visual comparison.
+
+6️⃣ Surface Clipping
+
+Removed all points on one side of the plane (e.g., Y > 0).
+
+Displayed the clipped model.
+
+Printed the updated vertex and triangle counts.
+
+💬 Purpose: Demonstrate slicing or sectioning for inspection or segmentation.
+
+7️⃣ Coloring and Extremes
+
+Applied a color gradient along the Z-axis.
+
+Found the lowest and highest points and marked them with spheres.
+
+Printed their coordinates.
+
+💬 Purpose: Visualize height-based variation and locate extremes on the model.
+
+Technologies Used
+
+Python 3
+
+Open3D
+
+NumPy
+
+Folder Structure
+Assignment5/
+│
+├── assignment5_open3d.py        # Main processing script
+
+├── my_model_mustafa.ply         # 3D model file
+
+└── README.md                    # Description and steps
+
+How to Run
+cd C:\Users\musta\mercadoinsights-olist-ecommerce\Assignment5
+python assignment5_open3d.py
+
+
+Each step will:
+
+Open a visualization window
+
+Print geometry details (vertices, triangles, colors, voxels)
+
+Final Note
+
+All 7 steps are implemented in sequence.
+Missing any step results in 0 points according to the assignment rules.
+This project demonstrates a full 3D processing pipeline: from raw geometry to reconstructed, voxelized, and color-analyzed visualization.
+
